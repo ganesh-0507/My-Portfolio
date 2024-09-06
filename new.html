@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganesh Dhotre</title>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --bg-color: #f5f5f5;
+            --card-bg: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background-color: var(--secondary-color);
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        nav ul li {
+            margin-left: 2rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .hero {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 5rem 0;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--secondary-color);
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .project p {
+            margin-bottom: 1rem;
+        }
+
+        .project a {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project a:hover {
+            background-color: var(--accent-color);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .skill {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: var(--secondary-color);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="./image/profile1.jpg" alt="Your Name" class="profile-img">
+        <h1>Ganesh Dhotre</h1>
+        <p>Full Stack Developer | Open Source Enthusiast</p>
+    </section>
+
+    <main class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="card">
+                <p>Hello! I'm a passionate web developer with a keen interest in creating responsive and user-friendly applications. I love contributing to open-source projects and continuously learning new technologies. With a strong foundation in both front-end and back-end development, I strive to create efficient and scalable solutions for complex problems.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="card">
+                <h3>Bachelor of Science in Computer Science (B.Sc.Cs)</h3>
+                <p>Dr G Y Pathrikar College of CS & IT, Sambhajinagar</p>
+            </div>
+
+            <div class="card">
+                <h3>Master of Science in Computer Science (M.Sc.CS) pursuing</h3>
+                <p>Art's Science & Commerce College, Badnapur, Sambhajinagar</p>
+                <p>Relevant coursework: Web Development, Backend Development, Database Management</p>
+            </div>
+        </section>
+
+
+        <section id="experience">
+            <h2>Internship Experience</h2>
+            <div class="card">
+                <h3>Web Developer</h3>
+                <p></p>
+                <ul>
+                    <li>Developed and maintained responsive websites using HTML, CSS, and JavaScript</li>
+                    <li>Collaborated with design team to implement user-friendly interfaces</li>
+                    <li>Optimized website performance and improved load times</li>
+                    <li>Integrated RESTful APIs to fetch and display dynamic content</li>
+                    <li>Optimized websites for cross-browser compatibility and mobile responsiveness</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>Backend Developer</h3>
+                <p></p>
+                <ul>
+                    <li>Developed and maintained RESTful APIs using Java and Spring Boot</li>
+                    <li>Designed and implemented efficient database schemas using SQL and Hibernate ORM</li>
+                    <li>Integrated third-party services and implemented authentication and authorization systems</li>
+                    <li>Optimized backend performance and improved application scalability</li>
+                    <li>Collaborated with frontend developers to ensure seamless integration of backend services</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <img src="./image/shoes.png" alt="Project 1">
+                    <div class="project-content">
+                        <h3>Shoes Collection</h3>
+                        <p>An interactive e-commerce platform showcasing a curated selection of trendy footwear. Features responsive design, dynamic filtering, and seamless checkout process. Built with HTML,CSS, and JavaScript.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./image/employee.png" alt="Project 2">
+                    <div class="project-content">
+                        <h3>Employee Management System</h3>
+                        <p>A comprehensive web application streamlining HR processes. Features include employee profiles, attendance tracking, leave management,Offer Letter, Experience Letter and performance evaluations. Built with HTML, CSS, Java, hibernate, Spring Boot, and Mysql.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="./image/hospital.png" alt="Project 3">
+                    <div class="project-content">
+                        <h3>Hospital Care</h3>
+                        <p>A robust healthcare management solution designed to streamline hospital operations. Features patient records management, appointment scheduling, billing, and inventory control. Developed using HTML, CSS, Java, hibernate Spring Boot and Mysql with a focus on data security and user-friendly interfaces for both staff and patients.</p>
+                        <a href="#">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill">HTML5</span>
+                <span class="skill">CSS3</span>
+                <span class="skill">JavaScript</span>
+                <span class="skill">React</span>
+                <span class="skill">Java</span>
+                <span class="skill">Hibernate</span>
+                <span class="skill">SpringBoot</span>
+                <span class="skill">SQL</span>
+                <span class="skill">RESTful APIs</span>
+                <span class="skill">Git</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="card">
+                <p>Feel free to reach out to me for collaborations or just to say hi!</p>
+                <p>Email: ganeshdhotre1218@gmail.com</p>
+                <p>Phone: 7972550507</p>
+
+                <div class="social-links">
+                    <a href="https://github.com/ganesh-0507"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ganesh-dhotre?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app "><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ganesh Dhotre. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
